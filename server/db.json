@@ -1,0 +1,28 @@
+{
+  "monstruos": [
+    {
+      "id": 1700590371982,
+      "nombre": "pinocho",
+      "tipo": "fantasma",
+      "alias": "madera",
+      "miedo": 50,
+      "defensa": "crucifijo"
+    },
+    {
+      "id": 1700595803383,
+      "nombre": "gregorio",
+      "tipo": "fantasma",
+      "alias": "caludddddd",
+      "miedo": 50,
+      "defensa": "crucifijo"
+    },
+    {
+      "id": 1700607477796,
+      "nombre": "perez",
+      "tipo": "hombre-lobo",
+      "alias": "sicario",
+      "miedo": 70,
+      "defensa": "crucifijo"
+    }
+  ]
+}

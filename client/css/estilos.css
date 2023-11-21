@@ -1,0 +1,277 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+html, body, a, label, input, select, footer{
+    cursor: url(../asset/mano.png),auto;
+}
+
+
+body{
+    background-image: url(../asset/background-body.jpeg);
+    
+}
+
+/* nav{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height:fit-content;  
+    
+} */
+
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0.5rem;
+    font-family: 'Chiller', cursive; 
+    transition: color 0.3s;
+    font-size: 2rem;
+    
+   
+}
+
+nav a:hover{
+    color: #ff6600; 
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    text-transform: capitalize;
+    
+}
+
+
+
+
+.titulo{
+    font-family: 'Chiller', cursive;
+    font-size: 3rem;
+    text-align: center;
+    background-color: #333;
+    color: greenyellow;
+}
+
+h2{
+    text-align: left;
+    font-family: 'Chiller', cursive;
+    text-transform: uppercase;
+    color:#ff8c00;
+}
+
+
+
+
+form input{
+    width: 100%;
+    margin: 0.3rem;
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 0.3rem;
+    
+    
+}
+
+form img{
+    max-width: 1.5rem;
+}
+
+select {
+    width:104%;
+    margin: 0.2rem;
+}
+
+fieldset{
+    display: flex;
+    width: 95%;
+    border-radius: 0.5rem;
+    
+}
+
+
+
+.seccion-formulario, .seccion-tabla{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.seccion-formulario{
+    border: 2px solid yellow; /* Borde de 1 píxel sólido de color negro */
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    max-width: 30rem; 
+    border-radius: 1rem;
+    margin: 0 auto;
+    
+} 
+
+.seccion-formulario input[type="text"] {
+    text-align: left;
+    width: 100%;
+    margin: 0.5rem 0; /* Agregar espacio vertical entre los inputs */
+}
+
+
+
+/* ver tamaño del logo */
+nav .logo{
+    height:5rem;
+    width:5rem
+    
+}
+
+label, fieldset, p{
+    font-family: 'Chiller', cursive;
+    color:#ffff00;
+    font-size: 1.2rem;
+    font-weight: bold; 
+}
+
+label, fieldset{
+     font-size: 1.6rem;
+   
+}
+
+.lista-monstruo{
+    text-align: center;
+}
+
+table thead{
+    color: #ffff00; 
+    background-color: #75FF33; 
+    font-size: 1.8rem;
+}
+
+table{
+    margin: 0 auto; 
+    text-align: center;
+    color: #75FF33; 
+    /* border: 1px solid #ff8c00; */
+    width: 25rem; 
+    height: auto;
+}
+
+table td {
+    text-align: center;
+    font-family: 'Chiller', cursive;
+    border: 1px solid #ff8c00;
+    font-size: 1.8rem;  
+}
+
+table th{
+    text-transform: uppercase;
+    font-family: 'Chiller', cursive; 
+}
+
+input[type="submit"],
+input[type="button"] {
+    background-color: #0073e6; 
+    color: #ffff00; 
+    padding: 10px 20px; 
+    border: none; 
+    cursor: pointer; 
+    font-family: 'Chiller', cursive; 
+    font-size: 1.5rem;
+}
+
+/* Estilo para el hover */
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: #0056a3; 
+    color:#ff8c00; 
+    font-family: 'Chiller', cursive; 
+    font-size: 1.5rem;
+}
+
+img {
+    max-width: 7rem;
+    max-height: 7rem;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #333; /* ajusta el color de fondo según tus preferencias */
+    padding: 2px;
+    text-align: center;
+    color: #ff8c00;
+}
+#tarjetas {
+    white-space: nowrap; /* Evitar que las tarjetas se envuelvan a la siguiente línea */
+    overflow-x: auto; /* Agregar una barra de desplazamiento horizontal si es necesario */
+}
+
+/* estilos.css */
+.tarjeta-monstruo {
+    display: inline-block;
+    vertical-align: top; /* Alinear las tarjetas en la parte superior */
+    border: 1px solid #ff8c00;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #333;
+    color: #ff8c00;
+    width: 10rem;
+    height: 14rem;
+    box-sizing: border-box;
+   
+}
+
+.oculto{
+    display: none;
+}
+/* footer {
+    margin-top:30rem;
+} */
+
+
+/*estilos responsive*/
+/* Estilos por defecto para pantallas grandes (lg) y superiores */
+.navbar {
+    background-color: #343a40; /* Color de fondo de la barra de navegación */
+    padding: 10px; /* Espaciado interior de la barra de navegación */
+    background-image: url(../asset/background-header.jpg);
+}
+
+.navbar-brand {
+    color: #ffffff; /* Color del texto del logo */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: fit-content;  
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #ffffff !important; /* Color del texto de los enlaces */
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: #ffc107; /* Establece el color del borde */
+    background-color: #ffc107 !important; /* Establece el color de fondo y anula cualquier estilo por defecto de Bootstrap con !important */
+}
+
+/* Estilos específicos para pantallas pequeñas (hasta lg) */
+@media (max-width: 600px) {
+    .navbar {
+        background-color: #1b6cbd; 
+    }
+
+      .custom-toggler.navbar-toggler {
+        background-color: #FFA500; 
+    }
+
+    /* Estilos específicos para la hamburguesa en pantallas pequeñas */
+    .navbar-toggler-icon {
+        background-color: #FFA500; /* Cambia el color de la hamburguesa */
+    }
+}
+

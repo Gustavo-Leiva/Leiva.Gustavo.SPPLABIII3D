@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./asset/favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/estilos.css" />
+
+  <script src="./js/app.js" type ="module" defer></script>
+ 
+  <title>Hallowen</title>
+</head>
+
+<body>
+  <header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="./asset/logo.jfif" alt="logo" class="logo" />
+      </a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./html/monstruos.html">Monstruos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    
+    <h1 class="titulo">Crud Monstruos</h1>
+  </header>
+  
+  <main>
+    <section class="seccion-formulario">
+      <h2>informacion del monstruo</h2>
+      <form>
+        <p>
+        
+          <img src="./asset/sombrero-de-bruja.png" alt="sombrero-bruja">
+          <label for="nombre">Nombre</label>
+          <input id = "nombre" type="text" name="txtNombre" placeholder="ingrese Nombre" autocomplete="off" required/>
+          <span id="errorNombre" class="error"></span>
+        </p>
+        <p>
+          <img src="./asset/defensa.png" alt="pocima">
+          <label for="alias">Alias</label>
+          <input id ="alias"type="text" name="txtAlias" placeholder="ingrese alter-ego" autocomplete="off" required/>
+          <span id="errorAlias" class="error"></span>
+        </p>
+        
+        <fieldset>
+          <legend><img src="./asset/hacha.png" alt="hacha">Defensa</legend>
+          <input type="radio" name="rdoDefensa" value="pocion" checked />Pocion
+          <br />
+          <input type="radio" name="rdoDefensa" value="crucifijo" />Crucifijo
+          <br />
+          <input type="radio" name="rdoDefensa" value="estaca" />Estaca
+          <br />
+          <input type="radio" name="rdoDefensa" value="plata" />Plata
+          <br />
+        </fieldset>
+        <p>
+          <img src="./asset/arana.png" alt="araña">
+          <label>Miedo</label>
+          <!-- <span id="valorRango">0</span> -->
+          <input type="range" min="0" max="100" step="5" name ="txtMiedo"/>
+          <!-- <span id="valorRango">100</span> -->
+        </p>
+       
+        
+
+        <img src="./asset/hombre-calabaza.png" alt="hombre-calabaza">
+        <label>Tipo</label>
+        <select name="txtTipo">
+          <!-- <option value="vampiro">vampiro</option>
+          <option value="hombre-lobo">Hombre Lobo</option>
+          <option value="fantasma">Fantasma</option>
+          <option value="bruja">Bruja</option> -->
+        </select>
+
+        <p>
+          <input type="submit" value="Guardar" id="btnGuardar"/>
+          <input type="button" value="Eliminar" id="btnEliminar"/>
+          <input type="hidden" name="txtId" />          
+        </p>
+      </form>
+
+      <!-- <img src="./asset/spinner.avif"  alt="Cargando spinner" id="spinner" class="spinner custom-spinne" style="display: none"/> -->
+      <img id="loader" src="./asset/spinner.avif" alt="loader fantasma" class="oculto">
+     
+    </section>
+    <section class="seccion-tabla"></section>
+    <h2 class="lista-monstruo">Lista de Monstruos</h2>
+    <div id="tabla"></div>
+
+
+    <section class="filtro">
+      <div class="container-fluid text-center col-md-7">
+          <div class="list-inline-item">
+              <label for="filtro" class="text-yellow"> Filtrar tipo</label>
+              <select name="filtro" id="filtro" class="form-control form-select-sm">
+                <option name="filtro" value="Todos" selected>Elija una opcion</option>
+                <option name="filtro" value="Crucifijo">Crucifijo</option>
+                <option name="filtro" value="Estaca">Estaca</option>
+                <option name="filtro" value="Plata">Plata</option>
+                <option name="filtro" value="Posion">Posion</option>
+              </select>
+              <label for="promedio" class="text-yellow">Promedio Medio</label>
+              <input type="text" name="txtPromedio" id="promedio" class="form-control form-select-sm" placeholder="N/A" disabled/>
+          </div>
+      <div class="container-fluid text-center col-md-12">
+          <div class="row container-fluid">
+              <div class="col  bg-info border mb-1 form-check">
+                  <label class="form-check-label text-yellow p-2" for="cboNombre">Nombre</label>
+                  <input type="checkbox" class="form-check-input chbox" id="cboNombre" value="nombre" name="nombre" checked/>
+              </div>
+              <div class="col bg-info border mb-1 form-check">
+                  <label class="form-check-label text-yellow p-2 " for="cboTipo">Tipo</label>
+                  <input type="checkbox" class="form-check-input chbox " id="cboTipo" value="tipo" name="tipo" checked/>
+              </div>
+              <div class="col bg-info border mb-1 form-check">
+                  <label class="form-check-label text-yellow p-2" for="cboAlias">Alias</label>
+                  <input type="checkbox" class="form-check-input chbox" id="cboAlias" value="alias" name="alias" checked/>
+              </div>
+              <div class="col bg-info border mb-1 form-check">
+                  <label class="form-check-label text-yellow p-2" for="cboMiedo">Miedo</label>
+                  <input type="checkbox" class="form-check-input chbox" id="cboMiedo" value="miedo" name="miedo" checked/>
+              </div>
+              <div class="col bg-info border mb-1 form-check">
+                <label class="form-check-label text-yellow p-2 " for="cboDefensa">Defensa</label>
+                  <input type="checkbox" class="form-check-input chbox" id="cboDefensa" value="defensa" name="defensa" checked/>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  </main>
+
+  <footer class="footer">
+    <nav>
+      <ul class="navbar-nav ml-auto">
+        <li><a href="#">home</a></li>
+        <li><a href="./html/monstruos.html">monstruos</a></li>
+        <li><a href="#">blog</a></li>
+        <li><a href="#">contacto</a></li>
+      </ul>
+      <p>Laboratorio III -Todos los derechos reservados 2023 &copy;</p>
+    </nav>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script> -->
+
+</body>
+
+</html>
